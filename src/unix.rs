@@ -1,5 +1,5 @@
 use core::ptr;
-use libc::{c_ulong, c_void};
+use libc::{c_void};
 
 /// Raw window handle for Xlib.
 ///
@@ -14,7 +14,7 @@ use libc::{c_ulong, c_void};
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct XlibHandle {
     /// An Xlib `Window`.
-    pub window: c_ulong,
+    pub window: usize,
     /// A pointer to an Xlib `Display`.
     pub display: *mut c_void,
     #[doc(hidden)]
